@@ -33,14 +33,14 @@
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
 
-$row-width: rem-calc(1140);
+$row-width: rem-calc(1200);
 // $total-columns: 12;
 
 // Global
 
 // We use these to control various global styles
 $body-bg: #f7f7f7;
-$body-font-color: #444;
+// $body-font-color: #444;
 $body-font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -54,12 +54,15 @@ $body-font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial,
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
+// $primary-color: #008CBA; // Blue
+$primary-color: #44A329; //green
+// $secondary-color: #e7e7e7; //light gray
+// $alert-color: #f04124; //red
+// $success-color: #43AC6A; //green
+// $warning-color: #f08a24; // orange
+// $info-color: #a0d3e8; // light blue
+$info-color: #97CF9F; //grey-green
+
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -1162,17 +1165,19 @@ $body-font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial,
 // $tooltip-pip-size: 5px;
 
 //
-// TOP BAR
+// TOP BAR 
 //
 
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+// $topbar-bg-color: #333; // dark grey
+$topbar-bg-color: #546B56;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
 // $topbar-height: 45px;
+$topbar-height: 50px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
@@ -1233,7 +1238,7 @@ $body-font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial,
 // $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
 
 // Sticky Class
-// $topbar-sticky-class: ".sticky";
+$topbar-sticky-class: ".sticky";
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 
 //
@@ -1256,7 +1261,7 @@ $body-font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial,
 
 // $range-slider-bar-border-width: 1px;
 // $range-slider-bar-border-style: solid;
-// $range-slider-bar-border-color: #ddd;
+// $range-slider-bar-border-color #ddd;
 // $range-slider-radius: $global-radius;
 // $range-slider-round: $global-rounded;
 // $range-slider-bar-bg-color: #fafafa;
@@ -1277,3 +1282,65 @@ $body-font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial,
 // $range-slider-handle-round: $global-rounded;
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);
 // $range-slider-handle-cursor: pointer;
+
+/* org-mode picture imports */
+img.org-upload {
+    float:right;
+    border: 1px solid black;
+    padding:1px;
+    margin:2px;
+    max-height:140px;
+}
+
+/* make org-mode timestamps work */
+/* there is also stuff in functions.php to get rid of undesired brackets */
+.timestamp {
+    color: grey;
+}
+
+.outline-2 {
+ }
+.outline-3 {
+    border-top: 1px gray solid;
+   padding-left: 30px;
+
+}
+
+.outline-3:last-child {
+    border-bottom:1px gray solid;
+}
+.outline-3:first-child {
+    border-width: 0px;
+}
+/* Source code blocks */
+span.linenr {
+    background: #FFFFFF;
+    border-right: solid 2px rgb(108, 226, 108);
+    color: rgb(175, 175, 175);
+    margin-right: 10px;
+
+}
+
+pre.src {
+    overflow:auto;
+    border: 1px solid #DDDDDD;
+
+}
+
+pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+ padding: 5px;
+}		 
+
+
+img.compare {
+  float:left;
+  max-width:50%;
+  }
+
+
+

@@ -39,7 +39,7 @@
 
 <body <?php body_class('antialiased'); ?>>
 
-<header class="contain-to-grid">
+<header class="contain-to-grid fixed">
 	<!-- Starting the Top-Bar -->
 	<nav class="top-bar" data-topbar>
 	    <ul class="title-area">

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Full Width
+Template Name: Lecture Notes listing
 */
 get_header(); ?>
 
@@ -19,7 +19,17 @@ get_header(); ?>
                         <input type="hidden">
                         </div> -->
 			<div class="entry-content">
-				<?php the_content(); ?>
+			    <?php the_content(); ?>
+                            <div class="row">
+                                <div class="large-4 columns">
+                                    <h3> Slides</h3>
+                                    <?php mwp_get_directory_listing ("/var/www/sandbox/DigitalHistory/Lectures/Slides/", "http://sandbox.hackinghistory.ca/DigitalHistory/Lectures/Slides/", "html"); ?>
+                                </div>
+                                <div class="large-4 columns">
+                                    <h3> Source Files</h3>
+                                    <?php mwp_get_directory_listing ("/var/www/sandbox/DigitalHistory/Lectures/Source/", "http://sandbox.hackinghistory.ca/DigitalHistory/Lectures/Source/", "org"); ?>
+                                </div>
+                            </div>
 			</div>
 <?php $args = array(
 	'authors'      => '',

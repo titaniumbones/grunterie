@@ -109,4 +109,32 @@ if ( ! function_exists( 'reverie_entry_meta' ) ) {
         echo '<time class="updated" datetime="'. get_the_time('c') .'" pubdate>'. get_the_time('F jS, Y') .'</time>';
     }
 };
+
+
+function custom_mtypes( $m ){
+    $m['kml'] = 'application/vnd.google-earth.kml+xml';
+    $m['kmz'] = 'application/vnd.google-earth.kmz';
+    $m['svg'] = 'image/svg+xml';
+    $m['svgz'] = 'image/svg+xml';
+    return $m;
+}
+add_filter( 'upload_mimes', 'custom_mtypes' );
+
+
+
+// list all the files!
+function mwp_get_directory_listing ( $local_dir, $web_root, $extension="html" ) {
+    $files = glob($local_dir . "*." . $extension);
+    if ($files) {
+        echo "<ul>";
+        foreach ($files as $file)
+        {
+            $basename = basename($file);
+            echo "<li><a href=\"$web_root/$basename\">$basename</a></li>";
+        }
+        echo "</ul>";
+    }
+}
+
+
 ?>

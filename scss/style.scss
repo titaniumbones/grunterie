@@ -59,6 +59,12 @@ img.aligncenter {
 	margin: 18px auto;
 	}
 
+
+img.figure {
+    max-width: 400px;
+}
+
+          
 // Fix gallery images display
 .gallery {
 	dt, dl {
@@ -316,7 +322,7 @@ footer.full-width {
 		}
 	}
 	.love-reverie {
-		border-top: 1px solid #ccc;
+		border-top: 0px solid #ccc;
 		padding-top: rem-calc(24);
 	}
 }
@@ -357,4 +363,8 @@ footer.full-width {
 		margin-top: rem-calc(48);
 		padding-top: rem-calc(32);
 	}
+}
+
+.syntaxhighlighter {
+    border: 1px solid grey;
 }
