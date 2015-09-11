@@ -9,6 +9,9 @@
 // Global Foundation Settings
 @import "app";
 
+// org-mode specific additions -- added by mp
+@import "org";
+
 // Tweak the mixin for WordPress, this might create some extra CSS in additional to app.css
 @import "foundation/components/pagination";
 
