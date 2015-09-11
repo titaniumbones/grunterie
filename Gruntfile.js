@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -8,12 +8,33 @@ module.exports = function(grunt) {
             },
             dist: {
                 options: {
-                    outputStyle: 'compressed'
+                    outputStyle: 'compressed',
+                    sourceMap: true,
                 },
                 files: {
                     'css/app.css': 'scss/app.scss',
                     'css/style.css': 'scss/style.scss'
                 }
+            }
+        },
+
+        watch: {
+            grunt: {
+                options: {
+                    reload: true
+                },
+                files: ['Gruntfile.js']
+            },
+
+            //To use Compass instead of lib-sass, uncomment this task and comment out the one below it:
+            //compass: {
+            //    files: 'scss/**/*.scss',
+            //    tasks: ['compass']
+            //}
+
+            sass: {
+                files: 'scss/**/*.scss',
+                tasks: ['sass']
             }
         },
 
@@ -46,25 +67,8 @@ module.exports = function(grunt) {
                 src: 'bower_components/foundation/js/foundation.min.js',
                 dest: 'js/foundation.min.js'
             }
-        },
-
-        watch: {
-            grunt: { files: ['Gruntfile.js'] },
-
-            /*
-             * To use Compass instead of lib-sass, uncomment this section and comment out the one below it:
-             */
-            //compass: {
-            //    files: 'scss/**/*.scss',
-            //    tasks: ['compass']
-            //},
-
-            sass: {
-                files: 'scss/**/*.scss',
-                tasks: ['sass']
-            }
-
         }
+
     });
 
     grunt.loadNpmTasks('grunt-contrib-compass')
@@ -73,13 +77,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    /*
-     * To use Compass instead of lib-sass, uncomment this line and comment out the one below it:
-     */
+    //To use Compass instead of lib-sass, uncomment this line and comment out the one below it:
     //grunt.registerTask('style', ['compass']);
     grunt.registerTask('style', ['sass']);
 
-
-    grunt.registerTask('build', ['style','uglify','copy']);
-    grunt.registerTask('default', ['style','watch']);
+    grunt.registerTask('build', ['style', 'uglify', 'copy']);
+    grunt.registerTask('default', ['style', 'watch']);
 }
