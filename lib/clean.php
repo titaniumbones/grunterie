@@ -126,7 +126,7 @@ if( ! function_exists( 'reverie_scripts_and_styles ' ) ) {
 	    wp_register_script( 'reverie-modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array(), '2.6.2', false );
 
 	    // register Google font
-	    wp_register_style('google-font', 'http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Lora:400,700|Droid+Sans+Mono');
+	    wp_register_style('google-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Lora:400,700|Droid+Sans+Mono');
 
 	    // ie-only style sheet
 	    wp_register_style( 'reverie-ie-only', get_template_directory_uri() . '/css/ie.css', array(), '' );
@@ -139,7 +139,7 @@ if( ! function_exists( 'reverie_scripts_and_styles ' ) ) {
 	    
 	    global $is_IE;
 	    if ($is_IE) {
-	       wp_register_script ( 'html5shiv', "http://html5shiv.googlecode.com/svn/trunk/html5.js" , false, true);
+	       wp_register_script ( 'html5shiv', "https://html5shiv.googlecode.com/svn/trunk/html5.js" , false, true);
 	    }
 
 	    // enqueue styles and scripts

@@ -5,6 +5,13 @@
 	
 	<?php /* Start loop */ ?>
 	<?php while (have_posts()) : the_post(); ?>
+	 <?php /* Display navigation to next/previous pages when applicable */ ?>
+	    <nav id="post-nav">
+                <div class="post-previous""><?php previous_post_link(); ?></div>
+                <div class="post-next"><?php next_post_link(); ?> </div>
+	          <!-- <div class="post-previous"><?php next_post_link( __( '&larr; Previous Post', 'reverie' ) ); ?></div>
+                  <div class="post-next"><?php previous_post_link( __( 'Next Post &rarr;', 'reverie' ) ); ?></div> -->
+               </nav>
 		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<header>
 				<h1 class="entry-title"><?php the_title(); ?></h1>
